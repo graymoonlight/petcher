@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400&display=swap');
+
+.homeMain {
+    display: flex;
+    flex-direction: column;
+  }
+
+.UpperContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: #ffffff;
+    position: relative;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.8px;
+}
+  
+  .content {
+    max-width: 400px;
+    margin-right: 50px;
+  }
+  
+  .logoText {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: #007bff;
+    margin: 0;
+  }
+  
+  .description {
+    font-size: 16px;
+    color: #666;
+    margin: 0 0 20px;
+    margin-top: 50px;
+  }
+  
+  .subtitle {
+    font-size: 20px;
+    color: #333;
+    line-height: 1.4;
+    margin-bottom: 30px;
+  }
+  
+  .registerLink {
+    font-size: 18px;
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+  
+    &:hover {
+      color: #0056b3;
+    }
+  }
+  
+  .phoneContainer {
+    flex-shrink: 0;
+  }
+  
+  .phoneImage {
+    width: 100%;
+  }
+  
+  .arrowContainer {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .arrowIcon {
+    cursor: pointer;
+    transition: transform 0.3s;
+  
+    &:hover {
+      transform: translateY(5px);
+    }
+  }
+  
+  .middle1container {
+    text-align: center;
+    padding: 2rem;
+    color: #1e90ff;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.8px;
+  }
+  
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .card {
+    margin-top: 80px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+      color: #333;
+    }
+  }
+
+
+  .middle2container {
+    margin: 4rem 0;
+    text-align: center;
+  
+    h2 {
+      font-size: 2rem;
+      color: #1e90ff;
+      margin-bottom: 2rem;
+    }
+  
+    .advantagesGrid {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+  
+    .advantageCard {
+      background-color: #f0f8ff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      width: 200px;
+  
+      p {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        color: #333;
+      }
+    }
+  }
+  
+  .bottomcontainer {
+    margin: 4rem 0;
+    text-align: center;
+  
+    h2 {
+      font-size: 2rem;
+      color: #1e90ff;
+      margin-bottom: 2rem;
+    }
+  
+    .howToStartImage {
+      position: relative;
+      display: inline-block;
+  
+      p {
+        margin-top: 1rem;
+        font-size: 1rem;
+        color: #555;
+      }
+    }
+  }

@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400&display=swap');
+
+.aboutMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.8px;
+    padding-top: 150px;
+    padding-bottom: 200px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #1e90ff;
+    margin-bottom: 2rem;
+  }
+  
+  .imageContainer {
+    margin-bottom: 2rem;
+  }
+  
+  .aboutImage {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    max-width: 600px;
+    margin-bottom: 2rem;
+  
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .contactLink {
+    font-size: 1rem;
+    color: #1e90ff;
+    text-decoration: underline;
+    cursor: pointer;
+  
+    &:hover {
+      color: #0b74da;
+    }
+  }
+  
