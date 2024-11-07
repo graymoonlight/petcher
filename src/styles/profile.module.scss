@@ -1,0 +1,279 @@
+.profileContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  padding-top: 100px;
+  padding-bottom: 450px;
+  text-align: center;
+}
+
+.header {
+  position: relative;
+  margin-bottom: 30px;
+
+  .profileImage {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  h1, h4, p {
+    font-family: 'Unbounded', sans-serif;
+    color: #067CFF;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.8px;
+    margin: 0;
+  }
+
+  h4 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28.8px;
+    margin: 0;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22.4px;
+    color: #323232bb;
+    margin-top: 5px;
+  }
+
+  .editLink {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.8px;
+    color: #1a73e8;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #0056b3;
+    }
+  }
+
+  .inputField {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22.4px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+.sections {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  .section {
+    width: 48%;
+    padding: 20px;
+    box-shadow: 0px 0px 4px 0px #0000001A;
+    border-radius: 12px;
+    text-align: left;
+
+    h2 {
+      font-family: 'Unbounded', sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24.8px;
+      color: #1a73e8;
+      margin-bottom: 10px;
+    }
+
+    p, .textArea {
+      font-family: 'Unbounded', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19.2px;
+      color: #222;
+    }
+
+    .textArea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+    }
+  }
+}
+
+.accepteds {
+  box-shadow: 0px 0px 4px 0px #0000001A;
+  border-radius: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.projectLink {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  color: #1a73e8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+
+  .accepted {
+    h3 {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24.8px;
+      color: #1a73e8;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19.2px;
+      color: #323232bb;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: #0056b3;
+  }
+}
+
+.projectarrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  h5 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 21.6px;
+    color: #1a73e8;
+    margin-right: 20px;
+  }
+}
+
+.inputField, .textArea {
+  transition: border 0.2s;
+
+  &:focus {
+    border-color: #1a73e8;
+    outline: none;
+  }
+}
+
+.profileImageLabel {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.deleteButton {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.8px;
+  color: #FF4040;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: white;
+
+  &:hover {
+    color: #cc2a2a;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+  h2 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #1a73e8;
+  }
+
+  p {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 10px;
+    color: #323232bd;
+    margin-bottom: 20px;
+  }
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirmButton, .cancelButton {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.confirmButton {
+  color: #323232bd;
+  background-color: #fff;
+}
+
+.cancelButton {
+  background-color: #1a73e8;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+

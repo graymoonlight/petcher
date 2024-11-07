@@ -1,0 +1,86 @@
+.projectsPage {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    padding-top: 100px;
+    padding-bottom: 350px;
+    font-family: Unbounded;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.84px;
+}
+
+.title {
+    color: #0057ff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 10%;
+}
+
+.projectList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.projectCard {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 60%;
+}
+
+.author {
+    font-weight: bold;
+    color: #333;
+}
+
+.projectTitle {
+    color: #0057ff;
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.categories, .tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.category, .tool {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    color: #333;
+}
+
+.toolsSection {
+    margin-top: 15px;
+}
+
+.toolsTitle {
+    font-weight: bold;
+    color: #555;
+}
+
+.likeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #0057ff;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.likeButton:hover {
+    transform: scale(1.2);
+}

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/styles/modules/header.module.scss';
 
-const Header = () => {
+const HeaderGuest = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer}>
@@ -20,5 +20,5 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderGuest;
 
