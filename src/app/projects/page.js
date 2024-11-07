@@ -50,7 +50,7 @@ export default function Projects() {
                             </div>
                         )}
                         <button className={styles.likeButton}>
-                          <Image src="/heart-icon.svg" width={24} height={21} />
+                          <Image src="/heart-icon.svg" width={24} height={21} alt='like'/>
                         </button>
                     </div>
                 ))}
