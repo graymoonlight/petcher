@@ -22,7 +22,7 @@ const Home = () => {
             Petcher — это платформа, которая позволяет находить pet-проекты,
             подходящие пользователю.
           </p>
-          <Link href="#footer" className={styles.registerLink}>
+          <Link href="/auth/register" className={styles.registerLink}>
             Зарегистрироваться
           </Link>
         </div>

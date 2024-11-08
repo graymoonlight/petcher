@@ -1,30 +1,39 @@
+"use client"
+
+import { useEffect, useState } from 'react';
+import { getProjects } from '@/app/api/api';
 import styles from '@/styles/projects.module.scss';
 import Image from 'next/image';
 
 export default function Projects() {
-    const projects = [
-        {
-            id: 1,
-            author: 'Кузнецов Константин',
-            title: 'Spons - создать свой ИИ.',
-            categories: ['Web-дизайнер', 'Frontend-разработчик', 'Backend-разработчик', 'DevOps'],
-            tools: ['Figma', 'Photoshop', 'UI-Kit', 'Анимация', 'Гайдлайны'],
-        },
-        {
-            id: 2,
-            author: 'Соларев Руслан',
-            title: 'Petcher',
-            categories: ['Web-дизайнер', 'Frontend-разработчик', 'Backend-разработчик', 'DevOps'],
-            tools: [],
-        },
-        {
-            id: 3,
-            author: 'Плотников Кирилл',
-            title: 'Filmora',
-            categories: ['Web-дизайнер', 'Frontend-разработчик', 'Backend-разработчик', 'DevOps'],
-            tools: ['HTML', 'CSS', 'JavaScript', 'DOM', 'TypeScript', 'React', 'Flexbox', 'Git'],
-        },
-    ];
+    const [projects, setProjects] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchProjects = async () => {
+            try {
+                setLoading(true);
+                const data = await getProjects();
+                setProjects(data.projects);
+            } catch (err) {
+                setError(err.message);
+                console.error('Ошибка при загрузке проектов:', err);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchProjects();
+    }, []);
+
+    if (loading) {
+        return <p>Загрузка проектов...</p>;
+    }
+
+    if (error) {
+        return <p>Ошибка загрузки проектов: {error}</p>;
+    }
 
     return (
         <div className={styles.projectsPage}>
@@ -32,14 +41,15 @@ export default function Projects() {
             <div className={styles.projectList}>
                 {projects.map((project) => (
                     <div key={project.id} className={styles.projectCard}>
-                        <p className={styles.author}>{project.author}</p>
-                        <h2 className={styles.projectTitle}>{project.title}</h2>
+                        <p className={styles.author}>{project.user.name}</p>
+                        <h2 className={styles.projectTitle}>{project.name}</h2>
+                        <p className={styles.description}>{project.description}</p>
                         <div className={styles.categories}>
-                            {project.categories.map((category, index) => (
+                            {project.categories?.map((category, index) => (
                                 <span key={index} className={styles.category}>{category}</span>
                             ))}
                         </div>
-                        {project.tools.length > 0 && (
+                        {project.tools?.length > 0 && (
                             <div className={styles.toolsSection}>
                                 <p className={styles.toolsTitle}>Инструменты</p>
                                 <div className={styles.tools}>
@@ -50,7 +60,7 @@ export default function Projects() {
                             </div>
                         )}
                         <button className={styles.likeButton}>
-                          <Image src="/heart-icon.svg" width={24} height={21} alt='like'/>
+                            <Image src="/heart-icon.svg" width={24} height={21} alt='like'/>
                         </button>
                     </div>
                 ))}
@@ -58,3 +68,4 @@ export default function Projects() {
         </div>
     );
 }
+

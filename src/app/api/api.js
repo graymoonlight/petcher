@@ -4,6 +4,19 @@ const api = axios.create({
   baseURL: 'http://5.182.87.84:4444',
 });
 
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      config.headers['Authorization'] = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
 api.interceptors.response.use(
   (response) => {
     console.log("Ответ от сервера:", response.data);
@@ -107,5 +120,16 @@ export const AuthRecoveryReset = async (recoveryData) => {
   } catch (error) {
     console.error('Ошибка сброса пароля:', error.response?.data || error.message);
     throw new Error('Ошибка сброса пароля');
+  }
+};
+
+export const getProjects = async () => {
+  try {
+    console.log("Запрос данных по проектам");
+    const data = await api.get('/projects');
+    return data;
+  } catch (error) {
+    console.error('Ошибка при получении данных по проектам:', error.response?.data || error.message);
+    throw new Error('Ошибка при получении данных по проектам');
   }
 };
