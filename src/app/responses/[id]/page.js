@@ -1,4 +1,5 @@
 import { use } from 'react';
+import styles from "@/styles/responceData.module.scss"
 
 async function getResponseData(id) {
     const responses = {
@@ -25,13 +26,41 @@ export default function ResponseDetailPage({ params }) {
     }
 
     return (
-        <div>
-            <h1>{response.company}</h1>
-            <p>{response.author}</p>
-            <p>{response.description}</p>
-            <p><strong>Нам нужны:</strong> {response.activePositions}</p>
-            <p><strong>Комментарий</strong>{response.comment}</p>
-            <p>Вы были приняты. Контакты для связи: {response.contact}</p>
+        <div className={styles.container}>
+            <h1 className={styles.companyName}>{response.company}</h1>
+            <p className={styles.author}>{response.author}</p>
+            <p className={styles.description}>{response.description}</p>
+
+            <div className={styles.positions}>
+                <h2>Нам нужны:</h2>
+                <div className={styles.tags}>
+                    {response.activePositions && response.activePositions.map((position, index) => (
+                        <span key={index} className={styles.positionTag}>{position}</span>
+                    ))}
+                </div>
+            </div>
+
+            <div className={styles.comment}>
+                <h2>Комментарий</h2>
+                <p>{response.comment}</p>
+            </div>
+
+            {response.status === 'Принято' && (
+                <div className={styles.accepted}>
+                    <p>Вы были приняты, контакты для связи:</p>
+                    <span className={styles.contact}>{response.contact}</span>
+                </div>
+            )}
+            {response.status === 'На рассмотрении' && (
+                <div className={styles.accepted}>
+                    <p>На рассмотрении</p>
+                </div>
+            )}
+            {response.status === 'Отказ' && (
+                <div className={styles.accepted}>
+                    <p>Вам было отказано</p>
+                </div>
+            )}
         </div>
     );
 }

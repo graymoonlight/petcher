@@ -1,4 +1,4 @@
-import HeaderAuth from "@/modules/header2";
+import HeaderChange from "@/modules/headerchange";
 import Footer from "@/modules/footer";
 import "@/styles/globals.css";
 
@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <HeaderAuth/>
+        <HeaderChange/>
         {children}
         <Footer />
       </body>
